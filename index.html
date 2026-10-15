@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="Research at the intersection of organic, polymer, and data chemistry for molecules and materials discovery.">
 
 
-<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;path d=%22M42 17v21C30 44 22 56 22 70a28 28 0 0 0 56 0c0-14-8-26-20-32V17Z%22 fill=%22none%22 stroke=%22%23a23a72%22 stroke-width=%225%22 stroke-linejoin=%22round%22/&gt;&lt;rect x=%2236%22 y=%2211%22 width=%2228%22 height=%228%22 rx=%224%22 fill=%22%23a23a72%22/&gt;&lt;path d=%22M25 65c11-5 20 5 33 3 8-1 11-6 17-4-3 14-13 24-25 24-13 0-23-10-25-23Z%22 fill=%22%23a23a72%22/&gt;&lt;circle cx=%2242%22 cy=%2274%22 r=%224%22 fill=%22%23fbeef4%22/&gt;&lt;circle cx=%2254%22 cy=%2280%22 r=%227%22 fill=%22%23fbeef4%22/&gt;&lt;circle cx=%2264%22 cy=%2272%22 r=%222%22 fill=%22%23fbeef4%22/&gt;&lt;/svg&gt;">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;path d=%22M42 17v21C30 44 22 56 22 70a28 28 0 0 0 56 0c0-14-8-26-20-32V17Z%22 fill=%22none%22 stroke=%22%23477777%22 stroke-width=%225%22 stroke-linejoin=%22round%22/&gt;&lt;rect x=%2236%22 y=%2211%22 width=%2228%22 height=%228%22 rx=%224%22 fill=%22%23477777%22/&gt;&lt;path d=%22M25 65c11-5 20 5 33 3 8-1 11-6 17-4-3 14-13 24-25 24-13 0-23-10-25-23Z%22 fill=%22%23477777%22/&gt;&lt;circle cx=%2242%22 cy=%2274%22 r=%224%22 fill=%22%23edf4f3%22/&gt;&lt;circle cx=%2254%22 cy=%2280%22 r=%227%22 fill=%22%23edf4f3%22/&gt;&lt;circle cx=%2264%22 cy=%2272%22 r=%222%22 fill=%22%23edf4f3%22/&gt;&lt;/svg&gt;">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,9 +69,9 @@
 
 <style>
   :root{
-    --bg:#FBFCFD; --ink:#11161C; --muted:#5A6573; --faint:#9AA4B2;
-    --accent:#c54b8c; --accent-bright:#a23a72; --green:#0fae86; --hairline:#E6E9EF;
-    --maxw:760px;
+    --bg:#FAFAF7; --ink:#11161C; --muted:#5A6573; --faint:#9AA4B2;
+    --accent:#477777; --accent-bright:#315f60; --green:#477777; --hairline:#E6E9EF;
+    --maxw:880px;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -84,21 +84,28 @@
   .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12px;
     letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin:0;}
 
-  /* ---------- HERO (centered around the vortex) ---------- */
-  header.hero{padding:clamp(36px,7vw,70px) 0 26px; text-align:center;}
+  /* ---------- HERO ---------- */
+  header.hero{padding:clamp(40px,7vw,72px) 0 32px;}
+  .hero-grid{display:grid; grid-template-columns:minmax(210px,240px) minmax(0,1fr);
+    align-items:center; gap:clamp(32px,5vw,52px);}
+  .hero-copy{align-self:stretch; display:flex; flex-direction:column; justify-content:space-between; text-align:left;}
   .vortex-wrap{width:min(540px,92%); margin:0 auto clamp(6px,2vw,18px);}
   .vortex{width:100%; height:auto; display:block; overflow:visible;}
-  .hero .eyebrow{margin-bottom:1.05rem;}
+  .hero .eyebrow{margin-bottom:0;}
   .hero h1{font-family:"Newsreader",Georgia,serif; font-weight:600;
-    font-size:clamp(46px,9vw,76px); line-height:0.98; letter-spacing:-0.02em; margin:0 0 .35rem;}
+    font-size:clamp(44px,7vw,66px); line-height:0.98; letter-spacing:-0.02em; margin:0;}
   .tagline{font-family:"Newsreader",Georgia,serif; font-style:italic;
     font-size:clamp(20px,3.4vw,27px); line-height:1.25; color:var(--accent);
-    margin:0 auto 1.3rem; max-width:30ch;}
-  .links{display:flex; flex-wrap:wrap; gap:10px 8px; justify-content:center; margin:0;}
-  .links a{font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--ink);
-    border:1px solid var(--hairline); border-radius:6px; padding:6px 13px;
+    margin:0; max-width:29ch;}
+  .links{display:flex; flex-wrap:nowrap; gap:7px; justify-content:flex-start; margin:0;}
+  .links a{font-family:"JetBrains Mono",monospace; font-size:11.5px; color:var(--ink); white-space:nowrap;
+    border:1px solid var(--hairline); border-radius:6px; padding:6px 9px;
     transition:border-color .15s,color .15s,background .15s;}
   .links a:hover{border-color:var(--accent); color:var(--accent); background:#fff;}
+  .hero-portrait{position:relative; margin:0;}
+  .hero-portrait img{position:relative; z-index:1; width:100%; aspect-ratio:1; height:auto; display:block;
+    object-fit:cover; object-position:center 36%; border-radius:12px; border:1px solid var(--hairline);
+    background:#fff; filter:saturate(.88) contrast(1.02);}
 
   /* ---------- SECTIONS ---------- */
   section{padding:34px 0; border-top:1px solid var(--hairline);}
@@ -134,7 +141,19 @@
   .tags .break{flex-basis:100%; height:0; margin:0; padding:0; border:0;}
   .tags span{font-family:"JetBrains Mono",monospace; font-size:12.5px; color:var(--ink);
     background:#fff; border:1px solid var(--hairline); border-radius:6px; padding:5px 10px;}
-  .tags span.key{background:#fbeef4; border-color:#c54b8c88; color:#c54b8c;}
+  .tags span.key{background:#edf4f3; border-color:#47777788; color:var(--accent);}
+
+  .methods-grid{border:1px solid var(--hairline); border-radius:10px; overflow:hidden; background:#fff;}
+  .method-group{display:grid; grid-template-columns:235px minmax(0,1fr); align-items:center; min-width:0;}
+  .method-group + .method-group{border-top:1px solid var(--hairline);}
+  .method-group h3{align-self:stretch; display:flex; align-items:center;
+    font-family:"JetBrains Mono",monospace; font-size:12px; line-height:1.35;
+    letter-spacing:.07em; text-transform:uppercase; color:var(--accent); background:#edf4f3;
+    margin:0; padding:11px 14px; border-right:1px solid var(--hairline);}
+  .method-group ul{display:flex; align-items:center; flex-wrap:wrap; gap:5px 0;
+    list-style:none; margin:0; padding:9px 14px; background:var(--bg);}
+  .method-group li{font-size:15px; line-height:1.4;}
+  .method-group li:not(:last-child)::after{content:"·"; color:var(--accent); margin:0 9px;}
 
   .pub{padding:16px 0;}
   .pub + .pub{border-top:1px dashed var(--hairline);}
@@ -152,8 +171,18 @@
 
   :focus-visible{outline:2px solid var(--accent-bright); outline-offset:3px; border-radius:4px;}
 
-  @media (max-width:560px){
+  @media (max-width:700px){
     .panel .deg-row{flex-direction:column; gap:2px;}
+    .hero-grid{grid-template-columns:1fr; gap:28px;}
+    .hero-copy{display:block; text-align:center;}
+    .hero .eyebrow{margin:0 auto 1.05rem;}
+    .hero h1{margin-bottom:.35rem;}
+    .tagline{margin:0 auto 1.4rem;}
+    .links{justify-content:center; flex-wrap:wrap; margin-top:0;}
+    .hero-portrait{width:min(250px,78vw); margin:0 auto; grid-row:auto;}
+    .method-group{grid-template-columns:1fr;}
+    .method-group h3{border-right:0; border-bottom:1px solid var(--hairline); padding:9px 12px;}
+    .method-group ul{padding:9px 12px;}
   }
 
   /* motion */
@@ -165,51 +194,56 @@
     @keyframes rise{to{opacity:1; transform:none;}}
   }
 
-  :root{--accent:#a23a72;--faint:#687383;}
+  :root{--accent:#477777;--accent-bright:#315f60;--faint:#687383;}
   html{scroll-behavior:smooth;scroll-padding-top:24px;}
-  .portrait-wrap{margin:0 auto 28px;}.portrait{width:144px;height:144px;border-radius:50%;object-fit:cover;border:1px solid var(--hairline);padding:5px;background:white;}
   .hero .eyebrow{font-size:12px;letter-spacing:.11em;}.tagline{max-width:32ch;}
   .research-nav{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:24px 0;font-size:15px;}
   .links a,.tab,.panel .labs,.tags span{font-size:14px;}
   .lede+.lede{margin-top:16px;}.interest{display:grid;grid-template-columns:30px 1fr;gap:12px;}
   .number{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent);padding-top:5px;}
   .questions{padding-left:18px;font-size:15px;line-height:1.65;margin:12px 0 0;}.questions li+li{margin-top:8px;}
-  .thesis{border-left:3px solid var(--accent);padding:28px;margin:8px 0 34px;background:#f8f2f6;border-top:0;}
+  .thesis{border-left:3px solid var(--accent);padding:28px;margin:8px 0 34px;background:#edf4f3;border-top:0;}
   .thesis h3{font-family:"Newsreader",serif;font-size:30px;line-height:1.15;margin:0 0 18px;font-weight:500;}
   .thesis p{font-size:16px;}.stages{padding-left:22px;font-size:15px;}.stages li{padding-left:5px;margin:18px 0;}.stages li::marker{color:var(--accent);}.stages span{display:block;color:var(--muted);margin-top:4px;}
   .thesis .scope{font-size:14px;color:var(--muted);margin-bottom:0;}.method-label{font-size:15px;font-weight:500;margin:24px 0 12px;}
   .prior-figure{margin-top:24px;font-size:14px;color:var(--muted);}.prior-figure summary{cursor:pointer;color:var(--accent);}.prior-figure img{width:100%;height:auto;}
-  @media(max-width:560px){.wrap{padding:0 22px;}.thesis{padding:22px 18px;}.thesis h3{font-size:27px;}.hero .eyebrow{max-width:30ch;margin-left:auto;margin-right:auto;}.interest{grid-template-columns:24px 1fr;gap:8px;}}
+  @media(max-width:700px){.wrap{padding:0 22px;}.thesis{padding:22px 18px;}.thesis h3{font-size:27px;}.hero .eyebrow{max-width:30ch;margin-left:auto;margin-right:auto;}.interest{grid-template-columns:24px 1fr;gap:8px;}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.panel.active{animation:none;}}
-.chemistry-flow{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:0 auto 42px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);}.chemistry-flow span:nth-child(even){color:var(--accent);}@media(max-width:560px){.chemistry-flow{gap:8px;font-size:12px;}}
+.chemistry-flow{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:0 auto 42px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);}.chemistry-flow span:nth-child(even){color:var(--accent);}@media(max-width:700px){.chemistry-flow{gap:8px;font-size:12px;}}
 .methods-list{margin:0;line-height:2;font-size:16px;}
 
   .tab{border-radius:6px;}
   section[aria-label="Methods and tools"] .tags{display:flex;flex-wrap:wrap;gap:8px;}
   section[aria-label="Methods and tools"] .tags span{flex:0 1 auto;font-size:12.5px;}
-  @media(max-width:560px){section[aria-label="Methods and tools"] .tags span{white-space:normal;max-width:100%;}}
+  @media(max-width:700px){section[aria-label="Methods and tools"] .tags span{white-space:normal;max-width:100%;}}
 </style>
 </head>
 <body>
 <main class="wrap">
 
   <header class="hero">
-    <p class="eyebrow reveal d1">Organic, Materials, &amp; Data Chemistry</p>
-    <h1 class="reveal d1">Casey Clark</h1>
-    <p class="tagline reveal d2">Combining data &amp; chemical intuition to discover molecules &amp; materials</p>
-    <nav class="links reveal d2" aria-label="Profiles and contact">
-      <a href="mailto:alchemicalcasey@gmail.com">Email</a>
-      <a href="cv.pdf">CV</a>
-      <a href="https://scholar.google.com/citations?user=bgGrvqsAAAAJ&amp;hl=en&amp;oi=sra" rel="me">Google&nbsp;Scholar</a>
-      <a href="https://orcid.org/0000-0003-0534-0816" rel="me">ORCiD</a>
-      <a href="https://www.linkedin.com/in/casey-clark-824766198" rel="me">LinkedIn</a>
-      <a href="https://github.com/caseyyyclark" rel="me">GitHub</a>
-    </nav>
+    <div class="hero-grid">
+      <figure class="hero-portrait reveal d2">
+        <img src="casey-headshot.jpg" alt="Portrait of Casey Clark" width="934" height="1400">
+      </figure>
+      <div class="hero-copy">
+        <h1 class="reveal d1">Casey Clark</h1>
+        <p class="tagline reveal d2">Combining data &amp; chemical intuition to discover molecules &amp; materials</p>
+        <nav class="links reveal d2" aria-label="Profiles and contact">
+          <a href="mailto:alchemicalcasey@gmail.com">Email</a>
+          <a href="cv.pdf">CV</a>
+          <a href="https://scholar.google.com/citations?user=bgGrvqsAAAAJ&amp;hl=en&amp;oi=sra" rel="me">Google&nbsp;Scholar</a>
+          <a href="https://orcid.org/0000-0003-0534-0816" rel="me">ORCiD</a>
+          <a href="https://www.linkedin.com/in/casey-clark-824766198" rel="me">LinkedIn</a>
+          <a href="https://github.com/caseyyyclark" rel="me">GitHub</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <section aria-label="About">
     <p class="lede">I’m a PhD candidate in Materials Science at the University of Utah, conducting research at the intersection of organic, polymer, and data chemistry.</p>
-    <p class="lede">My research combines chemical intuition with automated experimentation and predictive modeling to understand how molecular structure governs <strong>chemical reactivity, polymer behavior, and material properties</strong>. My thesis focuses on developing Bayesian-optimization-guided flow chemistry to <strong>expand azabicyclobutane (ABB) chemical space and accelerate the discovery of functional and responsive polymers</strong>.</p>
+    <p class="lede">My research aims to understand and control how molecular structure and synthesis conditions govern <strong>chemical reactivity, polymer behavior, and material properties</strong>. I pursue this by combining molecular design, flow chemistry, and Bayesian optimization to <strong>explore chemical space and</strong> <strong>accelerate the discovery of adaptive and programmable polymers</strong>.</p>
     <p class="lede">Additionally, I use density functional theory to study altermagnetism in graphene and amorphous topological insulators in semiconductor-compatible materials.</p>
   </section>
 
@@ -247,7 +281,23 @@
     </div>
   </section>
 
-  <section aria-label="Methods and tools"><h2 class="shead">Methods &amp; tools</h2><div class="tags"><span>Flow Chemistry</span><span>Density Functional Theory</span><span>VASP</span><span>High-Performance Computing</span><span>AI</span><span>Bayesian Optimization</span><span>Python</span><span>Experimental Design</span><span>Data Chemistry</span><span>Machine Learning</span></div></section>
+  <section aria-label="Methods and tools">
+    <h2 class="shead">Methods &amp; tools</h2>
+    <div class="methods-grid">
+      <div class="method-group">
+        <h3>Experimental Chemistry</h3>
+        <ul><li>Organic &amp; Polymer Synthesis</li><li>Flow Chemistry</li><li>Characterization</li></ul>
+      </div>
+      <div class="method-group">
+        <h3>Data Chemistry</h3>
+        <ul><li>Bayesian Optimization</li><li>Machine Learning</li><li>Design of Experiments</li></ul>
+      </div>
+      <div class="method-group">
+        <h3>Computational Chemistry</h3>
+        <ul><li>Density Functional Theory</li><li>VASP</li><li>High-Performance Computing</li></ul>
+      </div>
+    </div>
+  </section>
 
   <section aria-label="Publications" id="publications">
     <h2 class="shead">Publications</h2>
